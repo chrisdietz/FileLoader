@@ -105,11 +105,11 @@ namespace FileLoader.Data.Commands
         }
 
         /// <summary>
-        /// 
+        /// Export data out of database, copy to file then zip
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <param name="exportTextFileName"></param>
-        /// <param name="exportZipFileName"></param>
+        /// <param name="filePath">File path</param>
+        /// <param name="exportTextFileName">Export file name for text file</param>
+        /// <param name="exportZipFileName">Export file name for zip file</param>
         public int ExportDataToFile(string filePath, string exportTextFileName, string exportZipFileName)
         {
             var recordsExported = 0;

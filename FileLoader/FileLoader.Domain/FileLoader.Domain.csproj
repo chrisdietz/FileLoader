@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A02E2F42-9E4A-4E67-9B42-DD089E3102B3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{2276BCFF-C050-4DC8-9763-4A29CAA0AE3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FileLoader</RootNamespace>
-    <AssemblyName>FileLoader</AssemblyName>
+    <RootNamespace>FileLoader.Domain</RootNamespace>
+    <AssemblyName>FileLoader.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,25 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Entities\County.cs" />
+    <Compile Include="Entities\Voter.cs" />
+    <Compile Include="Entities\VoterStage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FileLoader.Data\FileLoader.Data.csproj">
-      <Project>{9ab7831a-a3b6-44b5-8adf-768cd5d20189}</Project>
-      <Name>FileLoader.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FileLoader.Domain\FileLoader.Domain.csproj">
-      <Project>{2276bcff-c050-4dc8-9763-4a29caa0ae3f}</Project>
-      <Name>FileLoader.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Files\BAK_20140502.txt" />
-    <Content Include="Files\BRA_20140502.txt" />
+    <Folder Include="Initializers\" />
+    <Folder Include="TrancferObjects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
